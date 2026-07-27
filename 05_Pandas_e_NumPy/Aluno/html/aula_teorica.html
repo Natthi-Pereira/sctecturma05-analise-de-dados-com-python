@@ -215,9 +215,17 @@
   <div class="abertura">
     <h3>🔄 Retomada — o que vimos na Semana 04</h3>
     <p>Você já sabe ler arquivos reais (<code>csv.DictReader</code>, <code>json</code>, Excel) e transformar listas de dicionários com <code>for</code> e list comprehensions. Essa é exatamente a base que esta semana usa para ler <code>vendas_papelaria.csv</code>.</p>
+    <h3>📖 Introdução — Por que NumPy antes de Pandas</h3>
+    <p>Nesta semana você começa a trabalhar com um módulo novo: o NumPy. O NumPy é importante porque serve de base pra várias coisas que você ainda vai ver no curso, principalmente o Pandas, que é o módulo que você vai usar bastante pra trabalhar com dados. Ou seja, entender bem o NumPy agora vai facilitar muito sua vida lá na frente.</p>
+    <p>O foco desta semana é simples: entender o que é um array, que é a estrutura básica do NumPy, e por que o array é diferente de uma lista, que é aquela estrutura que você já usou bastante até aqui no curso.</p>
+    <p>De primeira, um array parece igualzinho a uma lista. Você guarda vários valores dentro do array, consegue acessar cada valor pela posição, consegue percorrer item por item. A diferença que importa aparece quando você olha pro tipo dos dados. Numa lista comum do Python, você pode misturar à vontade: um número inteiro, um texto, um número com casa decimal, tudo junto, sem problema. Já no array, isso não rola. Se você tentar colocar tipos diferentes dentro do array, o NumPy pega e transforma tudo pro mesmo tipo, geralmente texto, que é o tipo que consegue "representar" todos os outros.</p>
+    <p>Isso pode parecer só uma regra chata, mas é justamente essa regra que faz o array ser tão útil. Como todo elemento dentro do array é do mesmo tipo, o NumPy consegue fazer contas com o array inteiro de uma vez só: somar um número a todos os valores, multiplicar todos por um número, elevar todos ao quadrado, tudo isso numa linha só de código. Com a lista, isso não funciona. Na lista, se você tentar somar um número direto a uma lista, o Python te dá erro. E se você tentar "somar" duas listas, o Python não soma os valores um a um — só junta as duas listas em uma só, o que é uma coisa bem diferente do que você normalmente quer fazer com números.</p>
+    <p>Pra conseguir fazer esse tipo de conta usando só lista, você precisaria criar uma lista nova vazia e ir, um por um, calculando e guardando o resultado. Funciona, mas dá mais trabalho de código e, quando a quantidade de dados é grande, também fica bem mais lento.</p>
+    <p>E é exatamente aqui que mora a grande vantagem do NumPy: o NumPy foi feito pensando em conta, em operação matemática. Quando a quantidade de dados cresce bastante, essa diferença de velocidade entre array e lista fica gigante — o array pode terminar uma conta dezenas de vezes mais rápido que a lista.</p>
+    <p>Guarda bem essa ideia, porque ela vai aparecer de novo quando você chegar no Pandas: cada coluna de uma planilha, quando você carrega essa planilha no Python, vira por baixo dos panos um array do NumPy. Então entender como o array funciona agora é o primeiro passo pra entender como o Pandas trabalha com dados mais na frente.</p>
     <h3>🟢 Abertura — Semana 05: NumPy e Pandas</h3>
-    <p>Chegou a hora central do curso. <strong>NumPy e Pandas são as ferramentas mais usadas na análise de dados com Python</strong> — e hoje você aprende os fundamentos das duas, nesta ordem: <strong>primeiro NumPy, depois Pandas</strong>. O motivo é simples: toda coluna de uma tabela Pandas é, por dentro, um array NumPy. Entender como um array se comporta é o que explica, mais adiante, por que o Pandas calcula do jeito que calcula.</p>
-    <p><strong>O que você vai aprender hoje:</strong></p>
+    <p>Chegou a hora central do curso. <strong>NumPy e Pandas são as ferramentas mais usadas na análise de dados com Python</strong> — e nesta semana você aprende os fundamentos das duas, nesta ordem: <strong>primeiro NumPy, depois Pandas</strong>. O motivo é simples: toda coluna de uma tabela Pandas é, por dentro, um array NumPy. Entender como um array se comporta é o que explica, mais adiante, por que o Pandas calcula do jeito que calcula.</p>
+    <p><strong>O que você vai aprender nesta semana:</strong></p>
     <ul>
       <li>Criar arrays NumPy e fazer cálculos vetorizados eficientes, sem <code>for</code></li>
       <li>Fatiar arrays (slice) e reconhecer as armadilhas de dtype e broadcasting</li>
@@ -238,7 +246,7 @@ precos_array = np.array([12.5, 2.0, 3.5])
 print(type(precos_lista))
 print(type(precos_array))
 print(precos_array * 2)   # multiplica cada elemento por 2, de uma vez</pre>
-    <p><code>precos_array * 2</code> retorna <code>[25. 4. 7.]</code>: o NumPy multiplica cada elemento ao mesmo tempo, sem nenhum <code>for</code>. <code>type(precos_array)</code> mostra <code>numpy.ndarray</code> — o nome <strong>ndarray</strong> significa "n-dimensional array" (array de N dimensões): hoje você só usa arrays 1D (uma sequência simples), mas o NumPy também representa tabelas (2D) e além, sempre com essa mesma classe.</p>
+    <p><code>precos_array * 2</code> retorna <code>[25. 4. 7.]</code>: o NumPy multiplica cada elemento ao mesmo tempo, sem nenhum <code>for</code>. <code>type(precos_array)</code> mostra <code>numpy.ndarray</code> — o nome <strong>ndarray</strong> significa "n-dimensional array" (array de N dimensões): nesta semana você só usa arrays 1D (uma sequência simples), mas o NumPy também representa tabelas (2D) e além, sempre com essa mesma classe.</p>
 
     <div class="box">
       <strong>⚠️ Veja como é um erro real do Python:</strong> multiplicar uma <em>lista comum</em> por 2 não dá erro — mas também não faz o que parece:
