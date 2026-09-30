@@ -22,11 +22,24 @@
 # Exceção: infográfico de Git/GitHub da Semana 03, publicado para os alunos
 !03_Versionamento_e_Python_Local/Aluno/html/github.png
 
+# Exceção: fluxogramas/pseudocódigo da Semana 02, publicados para os alunos
+# (extraídos de base64 embutido no notebook/html para arquivo externo em 2026-08-16)
+!02_Logica_de_Programacao/Aluno/img/**
+
 # Ficha de produto e demais PDFs internos
 *.pdf
 
 # Exceção: versão em PDF do infográfico de Git/GitHub da Semana 03, publicada para os alunos
 !03_Versionamento_e_Python_Local/Aluno/html/Fluxo_Git_GitHub_VSCode_HD.pdf
+
+# Exceção: apostilas de PostgreSQL da Semana 08, publicadas para os alunos
+!08_Banco_de_Dados_Relacionais_e_Nao_Relacionais/Aluno/pdf/**
+
+# Exceção: apostilas de PostgreSQL da Semana 09, publicadas para os alunos
+!09_Modelagem_de_Dados_e_SQL/Aluno/pdf/**
+
+# Exceção: apostilas de PostgreSQL da Semana 10, publicadas para os alunos
+!10_SQL_Avancado/Aluno/pdf/**
 
 # Apresentações de slide (template oficial e decks gerados por semana) -
 # material de apoio do professor para a aula em vivo, nao publicado ao aluno
@@ -43,6 +56,10 @@
 !notebook_colab.ipynb
 !notebook_colab_aluno.ipynb
 
+# Exceção: notebook bônus opcional do aluno (ex: Semana 11 - CRUD com
+# PostgreSQL real), publicado junto com o notebook principal da semana.
+!notebook_bonus_*.ipynb
+
 # Exceção: gabarito oficial das atividades e squads de cada semana já encerrada,
 # publicado para os alunos por pedido explícito (não é o notebook do professor
 # nem contém material de semanas ainda em andamento).
@@ -55,6 +72,31 @@
 # por caminho (como /arquivos/ acima) garante que nada dentro dela suba, do
 # mesmo jeito que uma pasta ignorada não é "designorada" por exceção de extensão.
 **/Professor/
+
+# Pasta gerada ao rodar o segundo bônus de ETL da Semana 11
+# (notebook_bonus_etl_medalhao.ipynb) — simula bronze/prata/ouro escrevendo
+# CSVs de verdade dentro do projeto do aluno. É saída de rodar a atividade
+# (não insumo), então nunca deve subir pro GitHub — mesmo raciocínio do
+# **/Professor/ acima, mas aqui é o próprio aluno gerando localmente.
+**/etl_medalhao/
+
+# Semana 13: o notebook do aluno baixa os CSVs do Portal da Transparência
+# (~500 MB) para Aluno/data/. É insumo baixado localmente, nunca vai pro GitHub.
+13_Projeto_Avaliativo_Pipeline_ETL/Aluno/data/
+
+# Projetos avaliativos resolvidos (Mini-Projeto M1S07 e Projeto Final): só a
+# pasta Aluno/ de cada um é publicada. O resto (entregas e clones dos alunos,
+# correções com notas, enunciados em PDF, dados brutos, Professor/) fica local.
+/T5_miniprojeto/*
+!/T5_miniprojeto/Aluno/
+/T5_miniprojeto/Aluno/df_limpo.csv
+/T5_Projeto_Final/*
+!/T5_Projeto_Final/Aluno/
+!/T5_Projeto_Final/Aluno/3_analise.ipynb
+/T5_Projeto_Final/Aluno/data/
+
+# Credenciais (o modelo .env.example continua publicado)
+**/.env
 
 # Checkpoints e cache do Jupyter/Colab
 .ipynb_checkpoints/
